@@ -627,10 +627,10 @@ const geoLayer = new Vietflex.GeoJSON(ADMIN_GEOJSON,{
     layerByName.set(p.ten_xa,layer);
     layer.bindTooltip(`${p.loai} ${p.ten_xa}`,{className:"vl-tooltip",direction:"top",sticky:true});
     layer.on({
-      mouseover(){
+      pointerover(){
         if(layer!==state.selectedLayer && featureMatches(feature)){layer.setStyle(hoverStyle(feature));layer.bringToFront()}
       },
-      mouseout(){
+      pointerout(){
         if(layer!==state.selectedLayer)layer.setStyle(defaultStyle(feature));
       },
       click(e){
